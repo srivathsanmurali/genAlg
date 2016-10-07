@@ -3,7 +3,7 @@
 from population import population
 from dna import dna
 def main():
-    p = population(100, 'srivathsan')
+    p = population(1000, 'to be or not to be')
     for i in range(1000):
         print i, p.getTotalScore()
         p.advanceGeneration()

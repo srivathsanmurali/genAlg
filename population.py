@@ -4,7 +4,7 @@ import random
 class population:
     def __init__(self, populationSize, target):
         self.populationSize       = populationSize;
-        self.target               = target
+        self.target               = target.lower()
         self.size                 = len(target)
         self.phrases              = [dna(self.size) for x in range(populationSize)]
 

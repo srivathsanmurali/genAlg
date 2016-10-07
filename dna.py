@@ -4,9 +4,9 @@ import random
 class dna:
     def __init__(self, size):
         self.size       = size;
-        self.genes      = "".join(random.choice(string.ascii_lowercase) for _ in range(self.size))
+        self.genes      = "".join(random.choice(string.ascii_lowercase + " ") for _ in range(self.size))
         self.crossOverProbabilty  = 0.5;
-        self.mutationProbabilty   = 0.1;
+        self.mutationProbabilty   = 0.01;
 
     def fitness(self, target):
         score = 0.0
