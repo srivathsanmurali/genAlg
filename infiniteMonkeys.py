@@ -2,8 +2,9 @@
 
 from population import population
 from dna import dna
+import sys
 def main():
-    p = population(1000, 'to be or not to be')
+    p = population(1000, sys.argv[1])
     for i in range(1000):
         print i, p.getTotalScore()
         p.advanceGeneration()
