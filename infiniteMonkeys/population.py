@@ -22,5 +22,17 @@ class population:
             child.mutate()
             self.phrases.append(child)
 
+        goodGenes =  [d for d in self.phrases if d.fitness(self.target) == 1]
+        if (len(goodGenes) > 0):
+          return True
+        else:
+          return False
+
+    def advanceGenerations(self,numGenerations):
+        for i in range(numGenerations):
+            if(self.advanceGeneration()):
+                return i
+        return -1
+
 
 
