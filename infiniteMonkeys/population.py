@@ -1,5 +1,6 @@
 from dna import dna
 import random
+import sys
 
 class population:
     def __init__(self, populationSize, target):
@@ -30,8 +31,15 @@ class population:
 
     def advanceGenerations(self,numGenerations):
         for i in range(numGenerations):
+            sys.stdout.write("\r" + "{0}: avg fitness = {1}".format(i, self.getTotalScore()))
+            sys.stdout.flush()
+
             if(self.advanceGeneration()):
+                sys.stdout.write("\n")
+                sys.stdout.flush()
                 return i
+        sys.stdout.write("\n")
+        sys.stdout.flush()
         return -1
 
 
